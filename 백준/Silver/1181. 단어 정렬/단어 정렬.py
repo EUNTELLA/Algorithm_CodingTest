@@ -1,11 +1,13 @@
+
 n = int(input())
 
-words = set()
+eg = set()
 
 for _ in range(n):
-    words.add(input())
-    
-sorted_words = sorted(words, key=lambda x:(len(x),x))
+    eg.add(input())
 
-for word in sorted_words:
+
+sorted_eg = sorted(eg, key =  lambda x :(len(x),x))
+
+for word in sorted_eg:
     print(word)
