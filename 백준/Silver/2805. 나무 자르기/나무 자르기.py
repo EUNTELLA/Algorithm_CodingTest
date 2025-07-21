@@ -1,21 +1,21 @@
-def is_enough(height):
-    return sum (tree - height for tree in trees if tree > height) >= m
+import sys
 
-n,m = map(int,input().split())
 
-trees = list(map(int, input().split()))
+n, m, *rest = map(int, sys.stdin.read().split())
+trees = rest  
 
-low = 0 
-high = max(trees)
-answer =0
+start = 0
+end = max(trees)
+result = 0
 
-while low <= high:
-    mid = (low + high) // 2
+while start <= end:
+    mid = (start + end) // 2
+    total = sum(tree - mid for tree in trees if tree > mid)
 
-    if is_enough(mid):
-        answer = mid
-        low = mid + 1
+    if total >= m:
+        result = mid
+        start = mid + 1
     else:
-        high = mid - 1
+        end = mid - 1
 
-print(answer)
+print(result)
