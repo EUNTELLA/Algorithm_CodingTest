@@ -1,10 +1,16 @@
-
 n= int(input())
+memo = {}
 
-dp = [i for i in range(n+1)]
-for i in range(2, n+1):
-    dp[i] = dp[i-1] + dp[i-2]
-1
-print(dp[-1])
+def fib(n):
+    if n  in memo:
+        return memo[n]
     
-    
+    if n <= 2:
+        result = 1
+    else: 
+        result = fib(n-1) + fib(n-2)
+        
+    memo[n] = result
+    return result
+
+print(fib(n))
