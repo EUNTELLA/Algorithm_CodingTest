@@ -1,10 +1,10 @@
-T = int(input())
- 
-for _ in range(T):
-    R,S = input().split()
-    R=int(R)
+s = int(input())
+
+for _ in range(s):
+    r , p = input().split()
+    r = int(r)
     
-    for C in S:
-        print(C*R,end='')
-        
+    for c in p:
+        print(c*r,end="")
+
     print()
